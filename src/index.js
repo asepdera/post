@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Route, BrowserRouter as Router, Routes, Switch } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import App from './App'
+import Register from './component/Register'
+import Posts from './component/Posts'
+import EditPost from './component/EditPost'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+          <Route path="/" element={<App/>} />
+          <Route path='/register' element={<Register/>} />
+          <Route path='/posts' element={<Posts/>} />
+          <Route path='/edit-post/:id' element={<EditPost/>} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 

@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.bg-biru-penting {
+  background-color: #94b3fd67 !important;
+}
