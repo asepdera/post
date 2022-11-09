@@ -11,15 +11,15 @@ function App() {
   }
   const login = (e) => {
     e.preventDefault()
-    axios.post(`https://puntenkangnitipheulanepiakhirnovemberwenya.greenscreative.com/api/login`, formData).then(res => {
+    axios.post(`http://jcc.brandingyou.id/api/login`, formData).then(res => {
       if (res.data.error) {
         console.log(res.data.error)
       } else {
         localStorage.setItem('login_token', res.data.data.token)
         localStorage.setItem('user', JSON.stringify(res.data.data.token))
+        navigate('/posts')
       }
     })
-    navigate('/posts')
   }
   return (
     <div className="App">

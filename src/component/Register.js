@@ -11,7 +11,7 @@ const Register = () => {
     }
     const register = (e) => {
         e.preventDefault()
-        axios.post(`https://puntenkangnitipheulanepiakhirnovemberwenya.greenscreative.com/api/register`, formData).then(res => {
+        axios.post(`http://jcc.brandingyou.id/api/register`, formData).then(res => {
             if (res.data.error) {
                 console.log(res.data.error)
             } else {

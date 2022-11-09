@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import { Route, BrowserRouter as Router, Routes, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App'
 import Register from './component/Register'
 import Posts from './component/Posts'
 import EditPost from './component/EditPost'
+import CreatePost from './component/CreatePost'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
           <Route path="/" element={<App/>} />
           <Route path='/register' element={<Register/>} />
           <Route path='/posts' element={<Posts/>} />
+          <Route path='/create-post' element={<CreatePost/>} />
           <Route path='/edit-post/:id' element={<EditPost/>} />
       </Routes>
     </Router>

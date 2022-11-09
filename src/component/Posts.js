@@ -6,7 +6,7 @@ function Posts() {
     const [post, setPost] = useState([]);
     const navigate = useNavigate()
     const data = () => {
-        axios.get(`https://puntenkangnitipheulanepiakhirnovemberwenya.greenscreative.com/api/post`, {
+        axios.get(`http://jcc.brandingyou.id/api/post`, {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('login_token')}`,
                 'Accept': 'application/json',
@@ -30,7 +30,7 @@ function Posts() {
     const hapus = (id) => {
         let konfirmasi = window.confirm('apakah yakin hapus post ini?')
         if (!konfirmasi) return false
-        axios.delete(`http://puntenkangnitipheulanepiakhirnovemberwenya.greenscreative.com/api/post/${id}`, {
+        axios.delete(`http://jcc.brandingyou.id/api/post/${id}`, {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('login_token')}`,
                 'Accept': 'application/json',
@@ -51,12 +51,15 @@ function Posts() {
     return (
         <>
             <h1 className="text-center">POST</h1>
+            <div className="d-flex justify-content-end px-5">
+                <button className="btn btn-primary" onClick={e => navigate('/create-post')}>Tambah Post</button>
+            </div>
             <div className="row p-5">{
                 post.map((v, i) => {
                     return (
                         <div key={i} className="card col-3">
                             <div className="card-header">
-                                <img src={v.image} alt="" height="300px"/>
+                                <img src={v.image} alt="" height="300px" width="100%"/>
                             </div>
                             <div className="card-body">
                                 <h1>{v.title}</h1>
